@@ -1,0 +1,268 @@
+Expanded(
+                        child: ListView.builder(
+                            //scrollDirection: Axis.horizontal,
+                            itemCount: transactions.length,
+                            itemBuilder: (context, index) => Container(
+                                  height: 150,
+                                  child: Card(
+                                    child:
+                                          Container(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  transactions[index]
+                                                      ['userProfile'],
+                                                  style: TextStyle(
+                                                      fontSize: 10.sp,
+                                                      color: Color(0xff374072)),
+                                                ),
+                                                SizedBox(
+                                                  height: 4.h,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.swap_horiz,
+                                                      size: 14,
+                                                      color: transactions[index]
+                                                                  ['type'] ==
+                                                              'Buy'
+                                                          ? Colors.green[400]
+                                                          : transactions[index][
+                                                                      'type'] ==
+                                                                  'sell'
+                                                              ? Colors.red[300]
+                                                              : appbarcolor,
+                                                    ),
+                                                    Text(
+                                                      transactions[index]
+                                                          ['type'],
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Color(
+                                                              0xff374072)),
+                                                    )
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 4.h,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  children: [
+                                                    Text(
+                                                      '9:45pm',
+                                                      style: TextStyle(
+                                                          fontSize: 13,
+                                                          color: Color(
+                                                              0xff7A809B)),
+                                                    ),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.all(4),
+                                                      height: 20.h,
+                                                      decoration: BoxDecoration(
+                                                        color: transactions[
+                                                                        index][
+                                                                    'status'] ==
+                                                                'Completed'
+                                                            ? Color(0xffD1F7C4)
+                                                            : Color(0xffFFDCE5),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      child: Text(
+                                                        transactions[index]
+                                                            ['status'],
+                                                        style: TextStyle(
+                                                            fontSize: 8.0,
+                                                            color: Color(
+                                                                0xff337138)),
+                                                      ),
+                                                    ),
+                                                     Expanded(
+                                            child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 16.0),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Text(
+                                                        'ETH 20.89 / BTC',
+                                                        style: TextStyle(
+                                                            fontSize: 10.sp),
+                                                      ),
+                                                      Text(
+                                                        '565 USD',
+                                                        style: TextStyle(
+                                                            fontSize: 8.sp,
+                                                            color: Colors.grey),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Text(
+                                                        transactions[index]
+                                                            ['paid'],
+                                                        style: TextStyle(
+                                                            fontSize: 10.sp),
+                                                      ),
+                                                      Text('345 USD',
+                                                          style: TextStyle(
+                                                              fontSize: 8.sp,
+                                                              color:
+                                                                  Colors.grey))
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Text(
+                                                        '45 ETH',
+                                                        style: TextStyle(
+                                                          fontSize: 10.sp,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        '323 USD',
+                                                        style: TextStyle(
+                                                            fontSize: 8.sp,
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                         
+                                       // 
+                                  ),
+                                )),
+                      ),
+
+
+
+
+
+
+
+                       ListView.builder(
+                      itemCount: transactions.length,
+                      itemBuilder: (context, index) => Container(
+                            height: 90,
+                            child: Card(
+                              child: ListView(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 25,
+                                        width: 25,
+                                        child: Icon(
+                                          Icons.swap_horiz,
+                                          size: 16,
+                                          color: Colors.greenAccent[400],
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(14),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  blurRadius: 0.0,
+                                                  offset: Offset.zero)
+                                            ]),
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            padding:
+                                                EdgeInsets.only(right: 250),
+                                            margin: EdgeInsets.symmetric(
+                                                vertical: 20, horizontal: 8),
+                                            child: Text(
+                                              transactions[index]['type'],
+                                              style: TextStyle(
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text('9:45pm',
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 10.sp)),
+                                        ],
+                                      ),
+
+                                      // Text(transactions[index]['userProfile'],
+                                      //  style: TextStyle(fontSize: 12.sp)),
+                                      Expanded(
+                                        child: Container(
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 20),
+                                          child: Text(
+                                              transactions[index]['paid'],
+                                              style:
+                                                  TextStyle(fontSize: 12.sp)),
+                                        ),
+                                      ),
+
+                                      // Container(
+                                      //   padding: EdgeInsets.all(4),
+                                      //   height: 15.h,
+                                      //   decoration: BoxDecoration(
+                                      //     color: transactions[index]
+                                      //                 ['status'] ==
+                                      //             'complete'
+                                      //         ? Color(0xffD1F7C4)
+                                      //         : transactions[index]['status'] ==
+                                      //                 'failed'
+                                      //             ? Color(0xffFFDCE5)
+                                      //             : Color(0xffFFEAB6),
+                                      //     borderRadius:
+                                      //         BorderRadius.circular(10.0),
+                                      //   ),
+                                      //   child: Text(
+                                      //     transactions[index]['status'],
+                                      //     style: TextStyle(
+                                      //         fontSize: 8.0,
+                                      //         color: Color(0xff337138)),
+                                      //   ),
+                                      // ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )),
